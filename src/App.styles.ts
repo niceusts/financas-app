@@ -22,10 +22,11 @@ background-color: #f5f5f5;`;
 
 export const Footer = styled.div`
   background-color: darkgray;   
-  height: 50px;
+  height: 40px;
   text-align: center;
   color: #fff;
   position: fixed;
   bottom: 0;
   width: 100%;
-`;
+  padding-top: 10px
+;`
