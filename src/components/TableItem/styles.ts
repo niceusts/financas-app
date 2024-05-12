@@ -10,6 +10,7 @@ export const TableColumn = styled.td`
 
 export const Category = styled.div<{color: string}>`
   display: inline-block;
+  text-align: center;
   padding: 5px 10px;
   border-radius: 5px;
   color: white;
