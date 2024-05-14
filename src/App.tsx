@@ -7,6 +7,7 @@ import { categories } from './data/categories';
 import { getCurrentMonth, filterListByMonth } from './helpers/dateFilter';
 import { TableArea } from './components/TableArea';
 import { InforArea } from './components/InforArea';
+import { InputArea } from './components/InputArea';
 
 const App = () => {
   const [list, setList] = useState(items);
@@ -40,25 +41,27 @@ const App = () => {
     setCurrentMonth(newMonth);
   }
 
+  const handleAddItem = (item: Item) => {
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
+  }
+
   return (
     <C.Container>
       <C.Header>
         <C.HeaderText>Sistema Financeiro Pessoal</C.HeaderText>
       </C.Header>
       <C.Body>
-   
-        {/*Aqui de informações*/}
-
-        {/*Aqui de inserção*/}
         <InforArea 
         currentMonth={currentMonth}
         onMonthChange={hadleMonthChange}
         income={income}
         expense={expense}
         />
-        {/*Tabela de itens*/}
+        <InputArea onAdd={handleAddItem} />
+        
         <TableArea list={filteredList}/>
-
       </C.Body>
       <C.Footer>
         Desenvolvido por: Niceu Biriba
